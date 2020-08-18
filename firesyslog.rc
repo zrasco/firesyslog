@@ -1,0 +1,243 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_FIRESYSLOG          ICON                    "firesyslog.ico"
+IDI_FIRESYSLOGR         ICON                    "firesysl.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_FIRESYSLOG ACCELERATORS 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 0, 0, 310, 198
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+CAPTION "Firewall/Syslog parser"
+MENU IDR_MENUMAIN
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TABMAIN,"SysTabControl32",TCS_FOCUSNEVER | WS_CLIPSIBLINGS | WS_TABSTOP,0,1,309,198
+    CONTROL         "",IDC_LVSYSLOG,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,11,24,286,164
+    CONTROL         "",IDC_LVFIREWALL,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP,11,24,286,164
+    EDITTEXT        IDC_EDITDEBUG,13,20,290,171,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | NOT WS_VISIBLE | WS_VSCROLL
+    EDITTEXT        IDC_EDITCMDINPUT,11,178,286,14,ES_AUTOHSCROLL | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDITCMDOUTPUT,11,26,286,137,ES_MULTILINE | ES_AUTOVSCROLL | ES_OEMCONVERT | ES_READONLY | NOT WS_VISIBLE | WS_VSCROLL
+    PUSHBUTTON      "Send",IDC_BTNCMDSEND,251,17,50,14,BS_NOTIFY | NOT WS_VISIBLE
+    GROUPBOX        "Output",IDC_BOXOUTPUT,5,16,296,151,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    GROUPBOX        "Input command",IDC_BOXINPUT,5,168,296,27,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 261, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",ID_BTNOK,71,85,50,14
+    PUSHBUTTON      "Cancel",ID_BTNCANCEL,133,85,50,14
+    GROUPBOX        "Log files directory",IDC_STATIC,7,7,247,31
+    EDITTEXT        IDC_EDITLOGDIR,15,17,232,14,ES_AUTOHSCROLL
+    GROUPBOX        "Settings",IDC_STATIC,7,38,247,41
+    CONTROL         "Start in the system tray",IDC_CHKSYSTRAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,49,92,10
+    CONTROL         "Start with Windows",IDC_CHKWINSTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,62,78,10
+END
+
+IDD_CUSTOMCMDOPTS DIALOGEX 0, 0, 220, 177
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Custom command list"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LISTCMDCOMMANDS,7,7,74,113,LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Add",IDC_BTNCMDADD,6,122,36,12
+    PUSHBUTTON      "&Delete",IDC_BTNCMDDELETE,46,122,36,12
+    EDITTEXT        IDC_EDITCMDNAME,89,31,113,14,ES_AUTOHSCROLL,WS_EX_RTLREADING
+    EDITTEXT        IDC_EDITCMDCOMMAND,89,60,113,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&OK",IDC_BTNCMDOK,53,156,50,14
+    PUSHBUTTON      "&Cancel",IDC_BTNCMDCANCEL,120,156,50,14
+    GROUPBOX        "Command information",IDC_STATIC,85,7,120,113
+    LTEXT           "Name:",IDC_STATIC,90,20,22,8
+    LTEXT           "Command line(For IP, use %s):",IDC_STATIC,89,49,101,8
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_CUSTOMCMDOPTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENUMAIN MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Settings...",                MENUID_FILE_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "&Exit",                       MENUID_FILE_EXIT
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "&Syslog log",                 MENUID_VIEW_SYSLOG
+        MENUITEM "&Firewall log",               MENUID_VIEW_FIREWALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Open log folder",            MENUID_VIEW_LOGDIR
+        MENUITEM SEPARATOR
+        MENUITEM "Custom commands...",          MENUID_VIEW_CUSTOMCOMMANDS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x3L
+#else
+ FILEFLAGS 0x2L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Results, Inc."
+            VALUE "FileDescription", "Firewall/System logger"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "firesysl"
+            VALUE "LegalCopyright", "Copyright (C) 2007, Results Inc."
+            VALUE "OriginalFilename", "firesyslog.exe"
+            VALUE "ProductName", "Firewall/System logger"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
